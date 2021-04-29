@@ -1,7 +1,8 @@
 <div class="profile-container">
-    <h1>Books</h1>
+    <h1>User info</h1>
   <h3 class="profile-name">name:<%= @user.name %></h3>
   <h3 class="profile-name">introduction:<%= @user.name %></h3>
+  <p><%= link_to "edit", "/users/#{@user.id}/edit" %></p>
 </div>
 
 <div class="form">
@@ -15,12 +16,12 @@
 <% end %>
 </div>
 
-<div class="show">
-    <h1>Books</h1>
+<div class="show-user">
+    <h1>Book detail</h1>
     <table>
         <tr>
             <th>Title</th>
-            <th>Opinion</th>
+            <th>opinion</th>
         </tr>
         <% @books.each do |book| %>
         <tr>

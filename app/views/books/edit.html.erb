@@ -1,0 +1,11 @@
+<div class="edit_form">
+<h1>Book Editing</h1>
+<%= form_for @book do |f| %> 
+<h4>Title</h4>
+<%= f.text_field :title %>
+<h4>Opinion</h4>
+<%= f.text_area :opinion %>
+<%= f.submit '投稿' %>
+<% end %>
+</div>
+
