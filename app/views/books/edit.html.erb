@@ -1,3 +1,8 @@
+<% @book.errors.full_messages.each do |message| %>
+ <div class="form-error">
+  <%= message %>
+ </div>
+<% end %>
 <div class="edit_form">
 <h1>Book Editing</h1>
 <%= form_for @book do |f| %> 
