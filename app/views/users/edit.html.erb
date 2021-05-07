@@ -1,3 +1,4 @@
+<div class="container">
 <% @user.errors.full_messages.each do |message| %>
  <div class="form-error">
   <%= message %>
@@ -11,5 +12,7 @@
   <%= f.attachment_field :profile_image %>
   <h4>introduction</h4>
   <%= f.text_area :information %>
+  <br>
   <%= f.submit 'Create Book', class: 'btn btn-primary' %>
 <% end %>
+</div>

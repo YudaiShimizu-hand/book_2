@@ -16,3 +16,32 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+nav.navbar navbar-expand navbar-dark bg-dark fixed-top{
+margin-bottom: 20px;
+}
+
+li.nav-item {
+ margin-right: 10px;
+}
+
+.size {
+ font-size: 1em;
+ color: white;
+}
+
+
+div.container {
+  margin-top: 80px;
+}
+
+#btn {
+ height: 30px;
+ width: 200px;
+}
+
+
+footer {
+ text-align: center;
+ margin-top: 50px;
+}

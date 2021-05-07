@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    
     def index
         @user = current_user
         @books = Book.all
@@ -33,4 +32,6 @@ class UsersController < ApplicationController
    def user_params
          params.require(:user).permit(:name, :information, :profile_image)
    end
+   
 end
+
