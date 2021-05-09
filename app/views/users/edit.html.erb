@@ -4,15 +4,13 @@
   <%= message %>
  </div>
 <% end %>
-<h1>User info</h1>
-<%= form_with model:@user, local:true do |f| %>
+<%= form_with model: @user, local:true do |f| %>
   <h4>Name</h4>
   <%= f.text_field :name %>
-  <h4>Image</h4>
+   <h4>Image</h4>
   <%= f.attachment_field :profile_image %>
-  <h4>introduction</h4>
-  <%= f.text_area :information %>
-  <br>
-  <%= f.submit 'Create Book', class: 'btn btn-primary' %>
+  <h4>Introduction</h4>
+  <%= f.text_area :introduction %>
+  <%= f.submit '投稿' %>
 <% end %>
 </div>

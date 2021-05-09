@@ -16,17 +16,20 @@
           <i class="fas fa-book-open size"><%= link_to "Books", books_path, class: 'nav-link text-light' %></i>
         </li>
          <li class="nav-item">
-          <i class="fas fa-sign-out-alt size"><%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %></i>
-        </li>
+          <i class="fas fa-sign-out-alt size"><%= link_to "logout", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %></i>
+         </li>
         <% else %>
         <li class="nav-item">
           <i class="fas fa-home size"><%= link_to "Home", root_path, class: 'nav-link text-light' %></i>
         </li>
         <li class="nav-item">
-          <i class="fas fa-user-plus size"><%= link_to "Sign_up", new_user_registration_path, class: 'nav-link text-light' %></i>
+           <i class="fas fa-link size"><%= link_to "About", home_about_path, class: 'nav-link text-light' %></i>
         </li>
         <li class="nav-item">
-          <i class="fas fa-sign-out-alt size"><%= link_to "Log_in", new_user_session_path, class: 'nav-link text-light' %></i>
+          <i class="fas fa-user-plus size"><%= link_to "sign up", new_user_registration_path, class: 'nav-link text-light' %></i>
+        </li>
+        <li class="nav-item">
+          <i class="fas fa-sign-out-alt size"><%= link_to "Login", new_user_session_path, class: 'nav-link text-light' %></i>
         </li>
         <% end %>
         </ul>

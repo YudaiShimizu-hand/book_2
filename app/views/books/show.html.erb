@@ -7,8 +7,9 @@
 <div class="row">
     <div class="col-md-4">
     <h1>User info</h1>
+   <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %> 
   <h3 class="profile-name">name:<%= current_user.name %></h3> 
-  <h3 class="profile-name">introduction:<%= current_user.information %></h3>
+  <h3 class="profile-name">introduction:<%= current_user.introduction %></h3>
   <%= link_to "/users/#{current_user.id}/edit", class: "btn btn-outline-dark", id: "btn" do %>
   <i class="fas fa-wrench"></i>
   <% end %>
@@ -20,7 +21,7 @@
   <h4>Title</h4>
   <%= f.text_field :title %>
   <h4>Opinion</h4>
-  <%= f.text_area :opinion %>
+  <%= f.text_area :body %>
   </br>
   <%= f.submit 'Create Book', class: 'btn btn-primary' %>
 <% end %>
@@ -34,9 +35,14 @@
          <tr>
             <th></th>
             <th><%= book.title %><th>
-            <th><%= book.opinion %></th>
+            <th><%= book.body %></th>
+         <% if book.user == current_user %>
             <th><%= link_to "edit", edit_book_path(book) %></th>
             <th><%= link_to "destroy", book_path(book.id), method: :delete %></th>
+           <% else %>
+              <td></td>
+              <td></td>
+          <% end %>
         </tr>
         <% end %>
     </table>
