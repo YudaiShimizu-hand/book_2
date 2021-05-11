@@ -1,12 +1,16 @@
 <div class="container">
+ <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<% if @book.errors.any? %>
+<h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 <% @book.errors.full_messages.each do |message| %>
- <div class="form-error">
-  <%= message %>
- </div>
+  <li><%= message %></li>
 <% end %>
-<div class="edit_form">
-<h1>Book Editing</h1>
-<%= form_for @book do |f| %> 
+<% end %>
+
+
+<h2>Editing Book</h2>
+<%= form_for @book, local: true do |f| %> 
 <h4>Title</h4>
 <%= f.text_field :title %>
 <h4>Opinion</h4>
@@ -14,8 +18,9 @@
 <br>
 <%= f.submit 'Update Book' %>
 <% end %>
-<%= link_to "show", book_path %>
-<%= link_to "Back", "/books" %>
+<%= link_to "Show", book_path(@book) %>
+<%= link_to "Back", books_path %>
+</div>
 </div>
 </div>
 
