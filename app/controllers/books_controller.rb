@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
       before_action :authenticate_user!
-　    before_action :correct_user, only: [:edit, :update]
+      before_action :correct_user, only: [:edit, :update]
      
     def create
          @book = Book.new(book_params)
-         @book.user_id = @user.id
+         @book.user_id = current_user.id
       if @book.save
          redirect_to book_path(@book),  notice: "You have created book successfully."
       else
